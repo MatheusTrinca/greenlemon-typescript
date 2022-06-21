@@ -106,11 +106,11 @@
 
 ### Web
 
-npm install --save @types/styled-components
+npm install --save styled-components @types/styled-components
 
 ### React Native
 
-npm install --save @types/styled-components @types/styled-components-react-native
+npm install --save styled-components @types/styled-components @types/styled-components-react-native
 
 ---
 
@@ -137,3 +137,13 @@ npm install --save @types/styled-components @types/styled-components-react-nativ
 https://github.com/heyman333/react-native-responsive-fontsize/blob/master/README.md
 
 ---
+
+## Roboto Slab
+
+- https://www.npmjs.com/package/@expo-google-fonts/roboto-slab
+- expo install @expo-google-fonts/roboto-slab expo-font
+
+## Font Loading e Splash Screen
+
+- https://docs.expo.dev/versions/latest/sdk/splash-screen/
+- https://docs.expo.dev/versions/latest/sdk/font/
