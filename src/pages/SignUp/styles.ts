@@ -30,17 +30,6 @@ export const Title = styled.Text`
   margin-bottom: ${RFValue(18)}px;
 `;
 
-export const ForgotPasswordButton = styled(TouchableOpacity)`
-  margin-top: 24px;
-  margin-bottom: 24px;
-`;
-
-export const ForgotPasswordText = styled.Text`
-  font-size: ${RFValue(16)}px;
-  color: ${({ theme }) => theme.colors.light};
-  font-family: ${({ theme }) => theme.fonts.regular};
-`;
-
 export const FooterContainer = styled(TouchableOpacity)`
   padding: ${RFValue(18)}px 0;
   border-top-width: 1px;
@@ -56,14 +45,14 @@ export const FooterContainer = styled(TouchableOpacity)`
 `;
 
 export const FooterText = styled.Text`
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.light};
   font-size: ${RFValue(18)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
   margin-left: 6px;
 `;
 
 export const FooterIcon = styled(Feather)`
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.light};
   font-size: ${RFValue(18)}px;
   margin-right: 6px;
 `;

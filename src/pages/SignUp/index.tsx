@@ -5,8 +5,6 @@ import {
   FooterContainer,
   FooterIcon,
   FooterText,
-  ForgotPasswordButton,
-  ForgotPasswordText,
   Logo,
   Title,
 } from './styles';
@@ -17,11 +15,11 @@ import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 interface ScreenNavigationProps {
-  navigate: (screen: string) => void;
+  goBack: () => void;
 }
 
-export const SignIn: React.FC = () => {
-  const { navigate } = useNavigation<ScreenNavigationProps>();
+export const SignUp: React.FC = () => {
+  const { goBack } = useNavigation<ScreenNavigationProps>();
 
   return (
     <KeyboardAvoidingView
@@ -36,7 +34,14 @@ export const SignIn: React.FC = () => {
         <Container>
           <Content>
             <Logo source={logo} />
-            <Title>Faça seu login</Title>
+            <Title>Faça seu Cadastro</Title>
+            <Input
+              icon="user"
+              placeholder="Nome"
+              autoCapitalize="none"
+              autoCorrect={false}
+              keyboardType="email-address"
+            />
             <Input
               icon="mail"
               placeholder="Email"
@@ -52,15 +57,12 @@ export const SignIn: React.FC = () => {
               secureTextEntry
             />
             <Button text="Entrar" onPress={() => {}} />
-            <ForgotPasswordButton>
-              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
-            </ForgotPasswordButton>
           </Content>
         </Container>
       </ScrollView>
-      <FooterContainer onPress={() => navigate('SignUp')}>
-        <FooterIcon name="log-in" />
-        <FooterText>Criar conta</FooterText>
+      <FooterContainer onPress={() => goBack()}>
+        <FooterIcon name="arrow-left" />
+        <FooterText>Voltar para o login</FooterText>
       </FooterContainer>
     </KeyboardAvoidingView>
   );

@@ -2,8 +2,8 @@ export default {
   colors: {
     black: '#232129', // Inside Input
     white: '#fff',
-    primary: '#7cfc00', // Botão login
-    primaryLight: '#ccff33', // Botão desativado
+    primary: '#c8ec54', // Botão login
+    primaryDark: '#649005', // Botão desativado
     secondary: '#79c7ff',
     success: '#12a454',
     danger: '#e83f5b',

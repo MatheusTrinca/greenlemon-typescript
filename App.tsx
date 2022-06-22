@@ -6,9 +6,10 @@ import {
   RobotoSlab_700Bold,
 } from '@expo-google-fonts/roboto-slab';
 import theme from './src/global/theme';
-import { SignIn } from './src/pages/SignIn';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
+import { Routes } from './src/routes';
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = React.useState(false);
@@ -43,7 +44,9 @@ export default function App() {
   return (
     <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
       <ThemeProvider theme={theme}>
-        <SignIn />
+        <NavigationContainer>
+          <Routes />
+        </NavigationContainer>
       </ThemeProvider>
     </View>
   );
