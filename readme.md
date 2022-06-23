@@ -147,3 +147,13 @@ https://github.com/heyman333/react-native-responsive-fontsize/blob/master/README
 
 - https://docs.expo.dev/versions/latest/sdk/splash-screen/
 - https://docs.expo.dev/versions/latest/sdk/font/
+
+## React Hook Forms
+
+- instalar dependências:
+  npm install react-hook-form
+
+## Yup
+
+- instalar dependências:
+  npm install @hookform/resolvers yup

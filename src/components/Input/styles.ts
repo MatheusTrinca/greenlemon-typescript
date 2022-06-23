@@ -1,6 +1,6 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
-import { TextInput, TouchableOpacity } from 'react-native';
+import { TextInput } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 export const Container = styled.View`
@@ -25,4 +25,15 @@ export const Icon = styled(Feather)`
   font-size: ${RFValue(24)}px;
   margin-right: ${RFValue(14)}px;
   margin-left: ${RFValue(4)}px;
+`;
+
+export const Error = styled.Text`
+  color: ${({ theme }) => theme.colors.danger};
+  font-size: 14px;
+  font-family: ${({ theme }) => theme.fonts.regular};
+  margin-bottom: 10px;
+`;
+
+export const InputController = styled.View`
+  width: 100%;
 `;
