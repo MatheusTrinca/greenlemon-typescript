@@ -4,7 +4,7 @@ export default {
     white: '#fff',
     primary: '#c8ec54', // Botão login
     primaryDark: '#649005', // Botão desativado
-    secondary: '#79c7ff',
+    secondary: 'orange',
     success: '#12a454',
     danger: '#e83f5b',
     dark: '#121214', // texto botão login ativado
