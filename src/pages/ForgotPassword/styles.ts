@@ -1,7 +1,7 @@
-import { RFValue } from 'react-native-responsive-fontsize';
 import styled from 'styled-components/native';
-import { Feather } from '@expo/vector-icons';
+import { RFValue } from 'react-native-responsive-fontsize';
 import { TouchableOpacity } from 'react-native';
+import { Feather } from '@expo/vector-icons';
 
 export const Container = styled.View`
   background-color: ${({ theme }) => theme.colors.gray800};
@@ -14,7 +14,7 @@ export const Content = styled.View`
   flex: 1;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: ${RFValue(60)}px;
+  margin-bottom: ${RFValue(120)}px;
 `;
 
 export const Logo = styled.Image`
@@ -45,14 +45,14 @@ export const FooterContainer = styled(TouchableOpacity)`
 `;
 
 export const FooterText = styled.Text`
-  color: ${({ theme }) => theme.colors.light};
+  color: ${({ theme }) => theme.colors.primary};
   font-size: ${RFValue(18)}px;
   font-family: ${({ theme }) => theme.fonts.regular};
   margin-left: 6px;
 `;
 
 export const FooterIcon = styled(Feather)`
-  color: ${({ theme }) => theme.colors.light};
+  color: ${({ theme }) => theme.colors.primary};
   font-size: ${RFValue(18)}px;
   margin-right: 6px;
 `;

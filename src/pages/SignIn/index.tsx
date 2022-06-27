@@ -18,6 +18,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useForm, FieldValues } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useAuth } from '../../context/AuthContext';
 
 interface ScreenNavigationProps {
   navigate: (screen: string) => void;
@@ -39,6 +40,8 @@ const formSchema = yup.object({
 export const SignIn: React.FC = () => {
   const { navigate } = useNavigation<ScreenNavigationProps>();
 
+  const { signIn } = useAuth();
+
   const {
     control,
     handleSubmit,
@@ -48,7 +51,7 @@ export const SignIn: React.FC = () => {
   });
 
   const handleSignIn = (form: IFormInputs) => {
-    console.log(form);
+    signIn(form.email, form.password);
   };
 
   return (
@@ -90,7 +93,7 @@ export const SignIn: React.FC = () => {
               onPress={handleSubmit(handleSignIn)}
               disabled={errors.email || errors.password}
             />
-            <ForgotPasswordButton>
+            <ForgotPasswordButton onPress={() => navigate('ForgotPassword')}>
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
             </ForgotPasswordButton>
           </Content>

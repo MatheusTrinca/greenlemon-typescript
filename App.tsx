@@ -11,6 +11,7 @@ import * as Font from 'expo-font';
 import { Routes } from './src/routes';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'react-native';
+import { AuthProvider } from './src/context/AuthContext';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = React.useState(false);
@@ -46,9 +47,11 @@ export default function App() {
     <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
       <StatusBar translucent backgroundColor="transparent" />
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Routes />
-        </NavigationContainer>
+        <AuthProvider>
+          <NavigationContainer>
+            <Routes />
+          </NavigationContainer>
+        </AuthProvider>
       </ThemeProvider>
     </View>
   );

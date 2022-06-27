@@ -157,3 +157,8 @@ https://github.com/heyman333/react-native-responsive-fontsize/blob/master/README
 
 - instalar dependências:
   npm install @hookform/resolvers yup
+
+## Env Variables
+
+- https://www.npmjs.com/package/react-native-dotenv
+- https://medium.com/swlh/how-to-properly-use-environment-variables-in-an-expo-react-native-app-7ab852590b30

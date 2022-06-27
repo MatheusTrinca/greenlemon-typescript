@@ -11,14 +11,21 @@ import {
 import logo from '../../assets/logo.png';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
-import { KeyboardAvoidingView, Platform, ScrollView } from 'react-native';
+import {
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useForm, FieldValues } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { api } from '../../services/api';
 
 interface ScreenNavigationProps {
   goBack: () => void;
+  navigate: (screen: string) => void;
 }
 
 interface IFormInputs {
@@ -38,7 +45,7 @@ const formSchema = yup.object({
 });
 
 export const SignUp: React.FC = () => {
-  const { goBack } = useNavigation<ScreenNavigationProps>();
+  const { goBack, navigate } = useNavigation<ScreenNavigationProps>();
 
   const {
     control,
@@ -48,8 +55,21 @@ export const SignUp: React.FC = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const handleSignUp = (form: IFormInputs) => {
-    console.log(form);
+  const handleSignUp = async (form: IFormInputs) => {
+    const data = {
+      name: form.name,
+      email: form.email,
+      password: form.password,
+    };
+    try {
+      await api.post('/users', data);
+      navigate('SignUpConfirmation');
+    } catch (err) {
+      Alert.alert(
+        'Erro ao realizar o cadastro',
+        'Cheque suas credenciais ou tente novamente',
+      );
+    }
   };
 
   return (
