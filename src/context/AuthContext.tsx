@@ -35,6 +35,7 @@ export const AuthProvider: React.FC = ({ children }) => {
       const user = await AsyncStorage.getItem(userData);
 
       if (user && token) {
+        api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         setData({ user: JSON.parse(user), token });
       }
     };
@@ -51,6 +52,8 @@ export const AuthProvider: React.FC = ({ children }) => {
       AsyncStorage.setItem(userData, JSON.stringify(user));
       AsyncStorage.setItem(tokenData, token);
 
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
       setData(response.data);
     } catch (error) {
       new Error(error as string);
@@ -61,6 +64,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   const logOut = async () => {
     await AsyncStorage.removeItem(tokenData);
     await AsyncStorage.removeItem(userData);
+    api.defaults.headers.common['Authorization'] = '';
     setData({} as IAuthState);
   };
 
